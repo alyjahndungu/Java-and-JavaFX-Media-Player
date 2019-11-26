@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.XtreameController">
+  <children>
+    <MenuBar style="-fx-background-color: skyblue; -fx-background-radius: 3em;" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Media">
+          <items>
+            <MenuItem fx:id="mtOpen" mnemonicParsing="false" onAction="#OpenFile" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="mtQuit" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane prefHeight="487.0" prefWidth="780.0" style="-fx-background-color: #CCCCCC;">
+         <children>
+            <Label fx:id="trackTitle" layoutX="98.0" layoutY="390.0" prefHeight="56.0" prefWidth="134.0" textFill="#0ef45b">
+               <font>
+                  <Font name="Embassy BT" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutY="339.0" maxWidth="1.7976931348623157E308" prefHeight="2.0" prefWidth="780.0" AnchorPane.bottomAnchor="151.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <MediaView fx:id="mediaView" fitHeight="340.0" fitWidth="900.0" focusTraversable="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MediaView>
+            <ImageView fx:id="albumCover" fitHeight="56.0" fitWidth="79.0" layoutX="651.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageAlbum" fitHeight="104.0" fitWidth="116.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="butPlay" layoutX="310.0" layoutY="369.0" mnemonicParsing="false" onAction="#play" prefHeight="32.0" prefWidth="58.0" style="-fx-background-color: skyblue; -fx-background-radius: 7em; -fx-border-radius: 7em;" text="||" AnchorPane.bottomAnchor="92.0">
+               <effect>
+                  <InnerShadow choke="0.17" color="#dd059d" radius="18.895" width="56.58" />
+               </effect>
+            </Button>
+            <Button fx:id="butBack" layoutX="232.0" layoutY="372.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: skyblue; -fx-background-radius: 6em;" text="|&lt;" AnchorPane.bottomAnchor="96.0">
+               <font>
+                  <Font name="ELEGANCE" size="11.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.17" color="#dd059d" radius="18.895" width="56.58" />
+               </effect>
+            </Button>
+            <Button fx:id="butNext" layoutX="402.0" layoutY="373.0" mnemonicParsing="false" onAction="#next" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: skyblue; -fx-background-radius: 6em;" text="&gt;|" AnchorPane.bottomAnchor="95.0">
+               <effect>
+                  <InnerShadow choke="0.17" color="#dd059d" radius="18.895" width="56.58" />
+               </effect>
+            </Button>
+            <Label fx:id="fullTimeLabel" layoutX="711.0" layoutY="395.0" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #CCCCCC; -fx-background-radius: 6em;" textFill="#1d1e1d" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="0.0" />
+            <Label layoutX="641.0" layoutY="353.0" prefHeight="23.0" prefWidth="49.0" text="Volume" textFill="#650568" AnchorPane.bottomAnchor="117.0" AnchorPane.rightAnchor="90.0">
+               <font>
+                  <Font name="Colonna MT" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="butRewind" layoutX="165.0" layoutY="372.0" mnemonicParsing="false" onAction="#rewindBack" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: skyblue; -fx-background-radius: 6em;" text="&lt;&lt;" AnchorPane.bottomAnchor="96.0">
+               <font>
+                  <Font name="ELEGANCE" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.17" color="#dd059d" radius="18.895" width="56.58" />
+               </effect>
+            </Button>
+            <Button fx:id="butForward" layoutX="480.0" layoutY="373.0" mnemonicParsing="false" onAction="#forward" prefHeight="17.0" prefWidth="35.0" style="-fx-background-color: skyblue; -fx-background-radius: 6em;" text="&gt;&gt;" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="95.0">
+               <font>
+                  <Font name="ELEGANCE" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.17" color="#dd059d" radius="18.895" width="56.58" />
+               </effect>
+            </Button>
+            <Label layoutX="30.0" layoutY="408.0" prefHeight="17.0" prefWidth="50.0" style="-fx-background-color: #CCCCCC; -fx-background-radius: 6em;" text="Time" textFill="#9933FF" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="30.0">
+               <font>
+                  <Font name="Colonna MT" size="18.0" />
+               </font>
+            </Label>
+            <Slider fx:id="musicTimer" layoutX="100.0" layoutY="415.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="14.0" prefWidth="580.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
+            <Slider fx:id="volSlider" blockIncrement="0.0" layoutX="701.0" layoutY="357.0" prefHeight="14.0" prefWidth="79.0" value="100.0" AnchorPane.bottomAnchor="122.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
